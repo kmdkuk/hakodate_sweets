@@ -1,4 +1,4 @@
-package com.example.hakodate_sweets
+package com.kmdkuk.hakodate_sweets
 
 import io.flutter.embedding.android.FlutterActivity
 
