@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hakodate_sweets/models/converter/converter.dart';
 import 'package:hakodate_sweets/models/models.dart';
 part 'sweet.freezed.dart';
 part 'sweet.g.dart';
@@ -18,8 +19,10 @@ abstract class Sweet with _$Sweet {
     @JsonKey(name: 'from_rdf') bool fromRdf,
     int favorite,
     @JsonKey(name: 'property_number') int propertyNumber,
-    Shop shop,
-    @JsonKey(name: 'small_categories') List<SmallCategory> smallCategories,
+    @ShopConverter() Shop shop,
+    @JsonKey(name: 'small_categories')
+    @SmallCategoryConverter()
+        List<SmallCategory> smallCategories,
   }) = _Sweet;
 
   factory Sweet.fromJson(Map<String, dynamic> json) => _$SweetFromJson(json);

@@ -19,18 +19,26 @@ class _$SweetTearOff {
 // ignore: unused_element
   _Sweet call(
       {int id,
-      @JsonKey(name: 'shop_id') int shopId,
+      @JsonKey(name: 'shop_id')
+          int shopId,
       String name,
       String price,
       String description,
       String imagePath,
-      @JsonKey(name: 'created_at') String createdAt,
-      @JsonKey(name: 'updated_at') String updatedAt,
-      @JsonKey(name: 'from_rdf') bool fromRdf,
+      @JsonKey(name: 'created_at')
+          String createdAt,
+      @JsonKey(name: 'updated_at')
+          String updatedAt,
+      @JsonKey(name: 'from_rdf')
+          bool fromRdf,
       int favorite,
-      @JsonKey(name: 'property_number') int propertyNumber,
-      Shop shop,
-      @JsonKey(name: 'small_categories') List<SmallCategory> smallCategories}) {
+      @JsonKey(name: 'property_number')
+          int propertyNumber,
+      @ShopConverter()
+          Shop shop,
+      @JsonKey(name: 'small_categories')
+      @SmallCategoryConverter()
+          List<SmallCategory> smallCategories}) {
     return _Sweet(
       id: id,
       shopId: shopId,
@@ -76,8 +84,10 @@ mixin _$Sweet {
   int get favorite;
   @JsonKey(name: 'property_number')
   int get propertyNumber;
+  @ShopConverter()
   Shop get shop;
   @JsonKey(name: 'small_categories')
+  @SmallCategoryConverter()
   List<SmallCategory> get smallCategories;
 
   Map<String, dynamic> toJson();
@@ -90,18 +100,26 @@ abstract class $SweetCopyWith<$Res> {
       _$SweetCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      @JsonKey(name: 'shop_id') int shopId,
+      @JsonKey(name: 'shop_id')
+          int shopId,
       String name,
       String price,
       String description,
       String imagePath,
-      @JsonKey(name: 'created_at') String createdAt,
-      @JsonKey(name: 'updated_at') String updatedAt,
-      @JsonKey(name: 'from_rdf') bool fromRdf,
+      @JsonKey(name: 'created_at')
+          String createdAt,
+      @JsonKey(name: 'updated_at')
+          String updatedAt,
+      @JsonKey(name: 'from_rdf')
+          bool fromRdf,
       int favorite,
-      @JsonKey(name: 'property_number') int propertyNumber,
-      Shop shop,
-      @JsonKey(name: 'small_categories') List<SmallCategory> smallCategories});
+      @JsonKey(name: 'property_number')
+          int propertyNumber,
+      @ShopConverter()
+          Shop shop,
+      @JsonKey(name: 'small_categories')
+      @SmallCategoryConverter()
+          List<SmallCategory> smallCategories});
 
   $ShopCopyWith<$Res> get shop;
 }
@@ -170,18 +188,26 @@ abstract class _$SweetCopyWith<$Res> implements $SweetCopyWith<$Res> {
   @override
   $Res call(
       {int id,
-      @JsonKey(name: 'shop_id') int shopId,
+      @JsonKey(name: 'shop_id')
+          int shopId,
       String name,
       String price,
       String description,
       String imagePath,
-      @JsonKey(name: 'created_at') String createdAt,
-      @JsonKey(name: 'updated_at') String updatedAt,
-      @JsonKey(name: 'from_rdf') bool fromRdf,
+      @JsonKey(name: 'created_at')
+          String createdAt,
+      @JsonKey(name: 'updated_at')
+          String updatedAt,
+      @JsonKey(name: 'from_rdf')
+          bool fromRdf,
       int favorite,
-      @JsonKey(name: 'property_number') int propertyNumber,
-      Shop shop,
-      @JsonKey(name: 'small_categories') List<SmallCategory> smallCategories});
+      @JsonKey(name: 'property_number')
+          int propertyNumber,
+      @ShopConverter()
+          Shop shop,
+      @JsonKey(name: 'small_categories')
+      @SmallCategoryConverter()
+          List<SmallCategory> smallCategories});
 
   @override
   $ShopCopyWith<$Res> get shop;
@@ -241,18 +267,26 @@ class __$SweetCopyWithImpl<$Res> extends _$SweetCopyWithImpl<$Res>
 class _$_Sweet with DiagnosticableTreeMixin implements _Sweet {
   const _$_Sweet(
       {this.id,
-      @JsonKey(name: 'shop_id') this.shopId,
+      @JsonKey(name: 'shop_id')
+          this.shopId,
       this.name,
       this.price,
       this.description,
       this.imagePath,
-      @JsonKey(name: 'created_at') this.createdAt,
-      @JsonKey(name: 'updated_at') this.updatedAt,
-      @JsonKey(name: 'from_rdf') this.fromRdf,
+      @JsonKey(name: 'created_at')
+          this.createdAt,
+      @JsonKey(name: 'updated_at')
+          this.updatedAt,
+      @JsonKey(name: 'from_rdf')
+          this.fromRdf,
       this.favorite,
-      @JsonKey(name: 'property_number') this.propertyNumber,
-      this.shop,
-      @JsonKey(name: 'small_categories') this.smallCategories});
+      @JsonKey(name: 'property_number')
+          this.propertyNumber,
+      @ShopConverter()
+          this.shop,
+      @JsonKey(name: 'small_categories')
+      @SmallCategoryConverter()
+          this.smallCategories});
 
   factory _$_Sweet.fromJson(Map<String, dynamic> json) =>
       _$_$_SweetFromJson(json);
@@ -285,9 +319,11 @@ class _$_Sweet with DiagnosticableTreeMixin implements _Sweet {
   @JsonKey(name: 'property_number')
   final int propertyNumber;
   @override
+  @ShopConverter()
   final Shop shop;
   @override
   @JsonKey(name: 'small_categories')
+  @SmallCategoryConverter()
   final List<SmallCategory> smallCategories;
 
   @override
@@ -400,8 +436,10 @@ abstract class _Sweet implements Sweet {
       int favorite,
       @JsonKey(name: 'property_number')
           int propertyNumber,
-      Shop shop,
+      @ShopConverter()
+          Shop shop,
       @JsonKey(name: 'small_categories')
+      @SmallCategoryConverter()
           List<SmallCategory> smallCategories}) = _$_Sweet;
 
   factory _Sweet.fromJson(Map<String, dynamic> json) = _$_Sweet.fromJson;
@@ -434,9 +472,11 @@ abstract class _Sweet implements Sweet {
   @JsonKey(name: 'property_number')
   int get propertyNumber;
   @override
+  @ShopConverter()
   Shop get shop;
   @override
   @JsonKey(name: 'small_categories')
+  @SmallCategoryConverter()
   List<SmallCategory> get smallCategories;
   @override
   _$SweetCopyWith<_Sweet> get copyWith;

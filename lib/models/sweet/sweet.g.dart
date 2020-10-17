@@ -19,17 +19,10 @@ _$_Sweet _$_$_SweetFromJson(Map json) {
     fromRdf: json['from_rdf'] as bool,
     favorite: json['favorite'] as int,
     propertyNumber: json['property_number'] as int,
-    shop: json['shop'] == null
-        ? null
-        : Shop.fromJson((json['shop'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+    shop: const ShopConverter().fromJson(json['shop'] as Map<String, dynamic>),
     smallCategories: (json['small_categories'] as List)
-        ?.map((e) => e == null
-            ? null
-            : SmallCategory.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) =>
+            const SmallCategoryConverter().fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
@@ -46,7 +39,8 @@ Map<String, dynamic> _$_$_SweetToJson(_$_Sweet instance) => <String, dynamic>{
       'from_rdf': instance.fromRdf,
       'favorite': instance.favorite,
       'property_number': instance.propertyNumber,
-      'shop': instance.shop?.toJson(),
-      'small_categories':
-          instance.smallCategories?.map((e) => e?.toJson())?.toList(),
+      'shop': const ShopConverter().toJson(instance.shop),
+      'small_categories': instance.smallCategories
+          ?.map(const SmallCategoryConverter().toJson)
+          ?.toList(),
     };
